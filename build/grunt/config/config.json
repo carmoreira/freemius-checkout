@@ -1,11 +1,11 @@
 {
 	"i18n": {
-		"author":      "Saltus <hello@saltus.dev>",
-		"support":     "https://saltus.dev/",
-		"pluginSlug":  "framework-demo",
-		"mainFile":    "framework-demo",
-		"textDomain":  "framework-demo",
-		"potFilename": "framework-demo"
+		"author":      "Carlos Moreira <cmoreira.wp@gmail.com>",
+		"support":     "https://cmoreira.net",
+		"pluginSlug":  "freemius-checkout",
+		"mainFile":    "freemius-checkout",
+		"textDomain":  "freemius-checkout",
+		"potFilename": "freemius-checkout"
 	},
 	"paths" : {
 		"root": "../"

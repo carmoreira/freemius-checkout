@@ -65,6 +65,14 @@ class Core {
 
 		$this->set_locale();
 		$this->set_assets();
+		$this->register_shortcode();
+	}
+
+	/**
+	 * Register Shortcode
+	 */
+	public function register_shortcode() {
+		add_shortcode( 'freemius-checkout', array( $this, 'load_frontend_assets' ) );
 	}
 
 	/**
@@ -81,6 +89,16 @@ class Core {
 	private function set_assets() {
 		$assets = new Plugin\Assets( $this );
 		$assets->load_assets();
+	}
+
+	/**
+	 * Load frontend assets
+	 */
+	public function load_frontend_assets() {
+		$assets   = new Plugin\Assets( $this );
+		$triggers = new Plugin\Triggers( $this );
+
+		$assets->load_front_assets( $triggers->rules );
 	}
 
 }

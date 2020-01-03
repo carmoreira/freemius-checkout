@@ -1,6 +1,6 @@
 {
-  "name": "framework-demo",
-  "version": "1.0.10",
+  "name": "freemius-checkout",
+  "version": "1.0.0",
   "description": "Saltus Framework PostTypes",
   "license": "GPL-2.0+",
   "repository": "https://git.saltus.dev",

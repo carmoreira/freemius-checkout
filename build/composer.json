@@ -1,6 +1,6 @@
 {
-	"name": "saltus/pluginframework",
-	"description": "Saltus Plugin Framework",
+	"name": "saltus/freemius-checkout",
+	"description": "Freemius Checkout",
 	"type": "wordpress-plugin",
 	"keywords": [
 		"wordpress",
@@ -10,14 +10,14 @@
 	"license": "GPL-3.0+",
 	"authors": [
 		{
-			"name": "Saltus Framework",
-			"email": "web@saltus.io",
-			"homepage": "https://saltus.io/"
+			"name": "Carlos Moreira",
+			"email": "cmoreira.wp@gmail.com",
+			"homepage": "https://cmoreira.net/"
 		}
 	],
 	"support": {
-		"issues": "https://saltus.io/",
-		"source": "https://saltus.io/",
+		"issues": "https://cmoreira.net/",
+		"source": "https://cmoreira.net/",
 		"1": {
 			"type": "vcs",
 			"url": "git@bitbucket.org:carmoreira/saltus-framework.git"

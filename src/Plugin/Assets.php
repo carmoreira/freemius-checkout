@@ -31,6 +31,7 @@ class Assets {
 	public function load_assets() {
 
 		add_action( 'admin_enqueue_scripts', array( $this, 'load_admin_styles' ) );
+
 	}
 
 	/**
@@ -46,5 +47,29 @@ class Assets {
 		);
 
 		wp_enqueue_style( $this->core->name . '_admin' );
+	}
+
+	public function load_front_assets( $rules ) {
+		wp_register_script(
+			$this->core->name . '_freemius_checkout',
+			'https://checkout.freemius.com/checkout.min.js',
+			array( 'jquery' ),
+			$this->core->version,
+			true
+		);
+
+		wp_enqueue_script( $this->core->name . '_freemius_checkout' );
+
+		wp_register_script(
+			$this->core->name . '_freemus_triggers',
+			plugins_url( 'assets/js/triggers.js', $this->core->file_path ),
+			array(),
+			true,
+			true
+		);
+		wp_enqueue_script( $this->core->name . '_freemus_triggers' );
+
+		wp_localize_script( $this->core->name . '_freemus_triggers', 'fmsTriggers', $rules );
+
 	}
 }
