@@ -1,26 +1,26 @@
-module.exports = function( grunt ) {
-
-	grunt.config( 'copy', {
+module.exports = function (grunt) {
+	grunt.config("copy", {
 		release: {
 			files: [
 				// includes all production files
 				{
 					expand: true,
-					cwd: '../',
+					cwd: "../",
 					src: [
-						'src/**/*',
-						'languages/**/*',
-						'<%= pkg.name %>.php',
-						'index.php',
-						'LICENSE.txt',
-						'vendor/**/*'
+						"src/**/*",
+						"languages/**/*",
+						"<%= pkg.name %>.php",
+						"index.php",
+						"readme.txt",
+						"vendor/**/*",
+						"assets/**/*",
+						"!**/node_modules/**"
 					],
-					dest: 'dist/<%= pkg.name %>/' },
+					dest: "dist/<%= pkg.name %>/"
+				}
+			]
+		}
+	});
 
-			],
-		},
-	} );
-
-	grunt.loadNpmTasks('grunt-contrib-copy');
-
+	grunt.loadNpmTasks("grunt-contrib-copy");
 };

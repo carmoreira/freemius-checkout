@@ -29,6 +29,10 @@ freemiusTriggers.init = function () {
 					opts.timestamp = rule.timestamp;
 				}
 
+				var hide_coupon = false;
+				if (rule.coupon !== '') {
+					hide_coupon = true;
+				}
 
 				var fremmiusCheckout = FS.Checkout.configure(opts);
 
@@ -37,6 +41,8 @@ freemiusTriggers.init = function () {
 					licenses: rule.licenses,
 					billing_cycle: rule.billingCycle,
 					trial: freemiusTriggers.bool(rule.trial),
+					coupon: rule.coupon,
+					hide_coupon: hide_coupon,
 					// You can consume the response for after purchase logic.
 					purchaseCompleted: function (response) {
 						// The logic here will be executed immediately after the purchase confirmation.                                // alert(response.user.email);

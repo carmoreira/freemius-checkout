@@ -6,7 +6,7 @@
  * Plugin Name:       Freemius Checkout
  * Plugin URI:        https://cmoreira.net/
  * Description:       Set selectors to trigger the freemius checkout iframe
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Carlos Moreira
  * Author URI:        https://cmoreira.net
  * License:           GPL-2.0+
@@ -40,7 +40,7 @@ if ( class_exists( \Saltus\WP\Framework\Core::class ) ) {
 	add_action(
 		'plugins_loaded',
 		function () use ( $framework ) {
-			$plugin = new Core( 'saltus-framework', '0.0.2', __FILE__, $framework );
+			$plugin = new Core( 'saltus-framework', '1.0.1', __FILE__, $framework );
 			$plugin->init();
 		}
 	);
