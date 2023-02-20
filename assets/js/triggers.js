@@ -29,9 +29,14 @@ freemiusTriggers.init = function () {
 					opts.timestamp = rule.timestamp;
 				}
 
+				var currency = 'usd';
+				if (typeof rule.currency !== undefined) {
+					currency = rule.currency;
+				}
+
 				var hide_coupon = false;
-				if (rule.coupon !== '') {
-					hide_coupon = true;
+				if (typeof rule.hide_coupon !== undefined) {
+					hide_coupon = freemiusTriggers.bool(rule.hide_coupon);
 				}
 
 				var fremmiusCheckout = FS.Checkout.configure(opts);
@@ -40,12 +45,18 @@ freemiusTriggers.init = function () {
 					name: rule.name,
 					licenses: rule.licenses,
 					billing_cycle: rule.billingCycle,
+					currency: currency,
 					trial: freemiusTriggers.bool(rule.trial),
 					coupon: rule.coupon,
 					hide_coupon: hide_coupon,
 					// You can consume the response for after purchase logic.
 					purchaseCompleted: function (response) {
-						// The logic here will be executed immediately after the purchase confirmation.                                // alert(response.user.email);
+						if ( typeof gtag !== undefined ) {
+							gtag('event', 'purchase', {
+								'value': response.purchase.initial_amount,
+								'currency': currency
+							});
+						}
 					},
 					success: function (response) {
 						// The logic here will be executed after the customer closes the checkout, after a successful purchase.                                // alert(response.user.email);

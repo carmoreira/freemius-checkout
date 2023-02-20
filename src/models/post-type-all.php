@@ -9,6 +9,12 @@ return [
 	'supports' => [
 		'title',
 	],
+	'features' => [
+		'duplicate'     => [
+			'label'      => __( 'Clone', 'interactive-geo-maps' ),
+			'attr_title' => __( 'Create a copy of this trigger', 'interactive-geo-maps' ),
+		],
+	],
 	'labels'   => [
 		'has_one'     => 'Trigger',
 		'has_many'    => 'Triggers',
@@ -111,6 +117,11 @@ return [
 							'default' => '',
 							'title'   => __( 'Coupon', 'freemius-checkout' ),
 						],
+						'hide_coupon'       => [
+							'type'    => 'switcher',
+							'default' => false,
+							'title'   => __( 'Hide Coupon', 'freemius-checkout' ),
+						],
 						'billingCycle' => [
 							'type'    => 'select',
 							'default' => 'anual',
@@ -120,6 +131,16 @@ return [
 								'lifetime' => __( 'Lifetime', 'freemius-checkout' ),
 							],
 							'title'   => __( 'Billing Cycle', 'freemius-checkout' ),
+						],
+						'currency' => [
+							'type'    => 'select',
+							'default' => 'usd',
+							'options' => [
+								'usd'    => __( 'USD $', 'freemius-checkout' ),
+								'eur'  => __( 'EUR €', 'freemius-checkout' ),
+								'gbp'  => __( 'GBP £', 'freemius-checkout' ),
+							],
+							'title'   => __( 'Currency', 'freemius-checkout' ),
 						],
 
 					],

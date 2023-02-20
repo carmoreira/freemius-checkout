@@ -64,7 +64,7 @@ class Assets {
 			$this->core->name . '_freemus_triggers',
 			plugins_url( 'assets/js/triggers.js', $this->core->file_path ),
 			array(),
-			true,
+			$this->core->version,
 			true
 		);
 		wp_enqueue_script( $this->core->name . '_freemus_triggers' );
