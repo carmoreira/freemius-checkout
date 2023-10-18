@@ -51,7 +51,8 @@
 		"vendor-dir": "../vendor/"
 	},
 	"require": {
-		"saltus/framework": "*"
+		"saltus/framework": "dev-dev",
+		"php": "^7.0 || ^8.0 "
 	},
 	"minimum-stability": "dev",
 	"require-dev": {
