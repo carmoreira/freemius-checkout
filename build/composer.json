@@ -51,11 +51,11 @@
 		"vendor-dir": "../vendor/"
 	},
 	"require": {
-		"saltus/framework": "dev-dev",
+		"saltus/framework": "dev-main",
 		"php": "^7.0 || ^8.0 "
 	},
 	"minimum-stability": "dev",
 	"require-dev": {
-		"phpunit/phpunit": "^6"
+		"phpunit/phpunit": "^8"
 	}
 }
